@@ -5,6 +5,7 @@ FROM ruby:$RUBY_VERSION-slim-buster
 ARG PG_MAJOR
 ARG NODE_MAJOR
 ARG BUNDLER_VERSION
+ARG RAILS_VERSION
 ARG YARN_VERSION
 
 # Common dependencies
@@ -71,7 +72,8 @@ ENV LANG=C.UTF-8 \
 
 # Upgrade RubyGems and install required Bundler version
 RUN gem update --system && \
-    gem install bundler:$BUNDLER_VERSION
+    gem install bundler:$BUNDLER_VERSION \
+    gem install rails:$RAILS_VERSION
 
 # Create a directory for the app code
 RUN mkdir -p /app

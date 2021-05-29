@@ -6,11 +6,12 @@ services:
       context: .dockerdev
       dockerfile: Dockerfile
       args:
-        RUBY_VERSION: '2.6.7'
+        RUBY_VERSION: '2.7.3'
         PG_MAJOR: '13'
         NODE_MAJOR: '14'
         YARN_VERSION: '1.22.5'
         BUNDLER_VERSION: '2.2.18'
+        RAILS_VERSION: '6.1.3.2'
     image: central-dev:1.0.0
     environment: &env
       NODE_ENV: ${NODE_ENV:-development}
