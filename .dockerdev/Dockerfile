@@ -72,7 +72,7 @@ ENV LANG=C.UTF-8 \
 
 # Upgrade RubyGems and install required Bundler version
 RUN gem update --system && \
-    gem install bundler:$BUNDLER_VERSION \
+    gem install bundler:$BUNDLER_VERSION && \
     gem install rails:$RAILS_VERSION
 
 # Create a directory for the app code
